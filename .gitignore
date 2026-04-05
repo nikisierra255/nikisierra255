@@ -122,13 +122,12 @@ data/raw/
 *.h5
 *.hdf5
 
-# Models
-models/
-*.pkl
-*.joblib
-*.h5
-*.pb
-*.onnx
+# Models - Comentado para permitir modelos entrenados en Streamlit Cloud
+# models/
+# *.joblib
+# *.h5
+# *.pb
+# *.onnx
 
 # Logs
 logs/
