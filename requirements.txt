@@ -1,0 +1,8 @@
+# Requirements for the ML project
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+jupyter
+streamlit
