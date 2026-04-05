@@ -11,7 +11,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from datetime import datetime
 import warnings
-from app.predictor import RecursivePredictor, compare_scenarios
+from predictor import RecursivePredictor, compare_scenarios
 
 warnings.filterwarnings('ignore')
 
