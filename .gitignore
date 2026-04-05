@@ -116,11 +116,9 @@ dmypy.json
 # Data files
 data/raw/
 *.csv
-*.xlsx
-*.json
-*.pkl
-*.h5
-*.hdf5
+# Excepciones - Archivos de datos necesarios para Streamlit Cloud
+!data/Processed/df_inferencia_performence.csv
+!data/Processed/Integration_df_Project.csv
 
 # Models - Comentado para permitir modelos entrenados en Streamlit Cloud
 # models/
