@@ -11,6 +11,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from datetime import datetime
 import warnings
+import os
 from predictor import RecursivePredictor, compare_scenarios
 
 warnings.filterwarnings('ignore')
@@ -66,8 +67,15 @@ st.markdown("""
 def load_model_and_data():
     """Carga el modelo y datos (caché para evitar recargar)."""
     try:
-        model = joblib.load('models/modelo_final_histgradientboosting.joblib')
-        df = pd.read_csv('data/Processed/df_inferencia_performence.csv')
+        # Obtener ruta del proyecto (2 niveles arriba desde app/App.py)
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        
+        # Rutas absolutas basadas en la ubicación del proyecto
+        model_path = os.path.join(project_root, 'models', 'modelo_final_histgradientboosting.joblib')
+        data_path = os.path.join(project_root, 'data', 'Processed', 'df_inferencia_performence.csv')
+        
+        model = joblib.load(model_path)
+        df = pd.read_csv(data_path)
         return model, df
     except Exception as e:
         st.error(f"❌ Error cargando modelo o datos: {e}")
